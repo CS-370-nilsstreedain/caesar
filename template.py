@@ -44,11 +44,11 @@ def decrypt(ciphertext):
         # if the character is in the range of a-z
         if c >= 'a'[0] and c <= 'z'[0]:
             # TODO: fix this
-            plaintext += c
+            plaintext += chr((ord(c) - ord('a') + 23) % 26 + ord('a'))
         # if the character is in the range of A-Z
         elif c >= 'A'[0] and c <= 'Z'[0]:
             # TODO: fix this
-            plaintext += c
+            plaintext += chr((ord(c) - ord('A') + 23) % 26 + ord('A'))
         # if the character is not in A-Z nor a-z
         else:
             plaintext += c
